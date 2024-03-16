@@ -9,6 +9,7 @@ try {
     $str = "Welcome!";
 
     ColorizeCLI::success($str);
+    ColorizeCLI::info($str);
     throw new \Exception('This is warning!');
 } catch (\Exception $ex) {
     ColorizeCLI::warning($ex->getMessage());
