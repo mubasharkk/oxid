@@ -43,5 +43,5 @@ php index.php
 ### Running Tests
 
 ```console
-./vendor/bin/phpunit tests/
+./vendor/bin/phpunit tests/ --colors
 ```
