@@ -1,6 +1,6 @@
 <?php
 
-use Mubasharkk\Oxid\Config\JsonExchangeRatesConfig;
+use Mubasharkk\Oxid\Config\From;
 use Mubasharkk\Oxid\Services\CurrencyConverter;
 
 class CurrencyConverterTest extends \PHPUnit\Framework\TestCase
@@ -13,7 +13,7 @@ class CurrencyConverterTest extends \PHPUnit\Framework\TestCase
 
     public function setUp(): void
     {
-        $config = new JsonExchangeRatesConfig(
+        $config = new From\JsonExchangeRates(
             __DIR__.'/../test-exchange-rates-config.json'
         );
 

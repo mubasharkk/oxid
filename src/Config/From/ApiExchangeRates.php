@@ -1,8 +1,11 @@
 <?php
 
-namespace Mubasharkk\Oxid\Config;
+namespace Mubasharkk\Oxid\Config\From;
 
-class ApiExchangeRatesConfig implements ExchangeRatesConfig
+use Mubasharkk\Oxid\Config\ExchangeRatesConfig;
+use Mubasharkk\Oxid\Config\ExchangeRatesTrait;
+
+class ApiExchangeRates implements ExchangeRatesConfig
 {
 
     use ExchangeRatesTrait;
@@ -24,7 +27,7 @@ class ApiExchangeRatesConfig implements ExchangeRatesConfig
         $this->exchangeRates = $response['data'];
     }
 
-    private function getDataFromApi(array $availableCurrencies = []): array
+    public function getDataFromApi(array $availableCurrencies = []): array
     {
         $ch = curl_init();
 

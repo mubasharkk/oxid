@@ -1,9 +1,13 @@
 <?php
 
-namespace Mubasharkk\Oxid\Config;
+namespace Mubasharkk\Oxid\Config\From;
 
-class JsonExchangeRatesConfig implements ExchangeRatesConfig
+use Mubasharkk\Oxid\Config\ExchangeRatesConfig;
+use Mubasharkk\Oxid\Config\ExchangeRatesTrait;
+
+class JsonExchangeRates implements ExchangeRatesConfig
 {
+
     use ExchangeRatesTrait;
 
     public function __construct(string $filename)
