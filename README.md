@@ -45,3 +45,5 @@ php index.php
 ```console
 ./vendor/bin/phpunit tests/ --colors
 ```
+
+GitHub Workflow is also added for phpunit, [view here](https://github.com/mubasharkk/oxid/blob/master/.github/workflows/ci.yml]).
