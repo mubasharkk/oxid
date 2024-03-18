@@ -30,15 +30,15 @@ class CurrencyConverter
         return round($amountToConvert / $baseConversionRate, 2);
     }
 
-    public function convertToAllCurrencies(string $currencyType, float $amount)
+    public function convertToCurrencies(string $currencyType, float $amount)
     {
-        $currencies = $this->ratesConfig->getAvailableCurrencies();
         $amountInBaseCurrency = $this->convertToBaseCurrency(
             $currencyType,
             $amount
         );
 
         $result = [];
+        $currencies = $this->ratesConfig->getAvailableCurrencies();
         foreach ($currencies as $cur) {
             $result[$cur] = round($amountInBaseCurrency * $this->ratesConfig->getExchangeRate($cur), 2);
         }

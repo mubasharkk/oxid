@@ -15,7 +15,7 @@ try {
 
     $currencyConverter = new CurrencyConverter($config);
 
-    $result = $currencyConverter->convertToAllCurrencies('USD', 532);
+    $result = $currencyConverter->convertToCurrencies('USD', 532);
     ColorizeCli::success(json_encode($result, JSON_PRETTY_PRINT));
 
 } catch (\Exception $ex) {
