@@ -1,18 +1,21 @@
 <?php
 
-use Mubasharkk\Oxid\Config\JsonExchangeRatesConfig;
+use Mubasharkk\Oxid\Config\ExchangeRatesConfigFactory;
 use Mubasharkk\Oxid\Helpers\ColorizeCLI;
 use Mubasharkk\Oxid\Services\CurrencyConverter;
 
 require_once './vendor/autoload.php';
 
-
 try {
 
-    $config = new JsonExchangeRatesConfig(__DIR__. '/exchange-rates-config.json');
+    // load config from a file
+    $config = ExchangeRatesConfigFactory::get(__DIR__. '/exchange-rates-config.json');
+    // load config from API https://app.freecurrencyapi.com
+    $config = ExchangeRatesConfigFactory::getFromApi('EUR');
+
     $currencyConverter = new CurrencyConverter($config);
 
-    $result = $currencyConverter->convertToAllCurrencies('BTC', 1);
+    $result = $currencyConverter->convertToAllCurrencies('USD', 532);
     ColorizeCli::success(json_encode($result, JSON_PRETTY_PRINT));
 
 } catch (\Exception $ex) {
