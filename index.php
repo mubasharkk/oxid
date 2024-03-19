@@ -3,6 +3,7 @@
 use Mubasharkk\Oxid\Config\ExchangeRatesConfigFactory;
 use Mubasharkk\Oxid\Helpers\ColorizeCLI;
 use Mubasharkk\Oxid\Renderer;
+use Mubasharkk\Oxid\Services\Api\FreeCurrencyApiService;
 use Mubasharkk\Oxid\Services\CurrencyConverter;
 
 require_once './vendor/autoload.php';
@@ -15,7 +16,9 @@ try {
 
     // load config from external API https://app.freecurrencyapi.com
     // enable this to calculate results from realtime exchange rates
-    //$config = ExchangeRatesConfigFactory::getFromApi('TRY');
+    $config = ExchangeRatesConfigFactory::getFromApi(
+        new FreeCurrencyApiService('TRY', ['EUR', 'USD'])
+    );
 
     $currencyConverter = new CurrencyConverter($config);
 

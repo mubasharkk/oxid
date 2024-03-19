@@ -3,6 +3,7 @@
 namespace Mubasharkk\Oxid\Config;
 
 use Mubasharkk\Oxid\Config\From;
+use Mubasharkk\Oxid\Services\Api;
 
 class ExchangeRatesConfigFactory
 {
@@ -36,12 +37,14 @@ class ExchangeRatesConfigFactory
     }
 
     public static function getFromApi(
-        string $baseCurrency = 'EUR'
+        ?Api\ExchangeRatesApiService $api = null,
     ): ExchangeRatesConfig {
         /**
          * Here we have the advantage we can add multiple API sources here
          * when needed later, as pattern as above for file sources.
          */
-        return new From\ApiExchangeRates($baseCurrency);
+        return new From\ApiExchangeRates(
+            $api ?? new Api\FreeCurrencyApiService()
+        );
     }
 }

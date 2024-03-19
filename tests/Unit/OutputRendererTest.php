@@ -18,7 +18,7 @@ class OutputRendererTest extends \PHPUnit\Framework\TestCase
             "BTC" => 0.5,
         ];
 
-        $renderer = new OutputRenderer($data, 'EUR');
+        $renderer = new OutputRenderer($data);
 
         $this->assertJsonStringEqualsJsonString(
             \json_encode($data),
