@@ -2,23 +2,18 @@
 
 namespace Mubasharkk\Oxid\Renderer;
 
+/**
+ * This class could be divided into 2 separate renderers that would be
+ * responsible for rendering specifically JSON & CSV formats respectively.
+ *
+ * To keep the task simpler both functionality are merged into one renderer.
+ */
 class OutputRenderer implements JsonRenderer, CsvRenderer
 {
 
     public function __construct(private array $results = [])
     {
     }
-
-    public function add(string $currency, float $amount): void
-    {
-        $this->results[$currency] = $amount;
-    }
-
-    public function get(string $currency): float
-    {
-        return $this->results[$currency];
-    }
-
 
     public function toJson(int $flags = 0): string
     {
@@ -58,6 +53,6 @@ class OutputRenderer implements JsonRenderer, CsvRenderer
 
     public function __toString(): string
     {
-        return $this->toJson();
+        return http_build_query($this->results);
     }
 }

@@ -5,7 +5,7 @@ use Mubasharkk\Oxid\Renderer\OutputRenderer;
 class OutputRendererTest extends \PHPUnit\Framework\TestCase
 {
 
-    public function testJsonOutput()
+    public function testJsonAndStringOutput()
     {
         $data = [
             "EUR" => 31206.98,
@@ -25,8 +25,8 @@ class OutputRendererTest extends \PHPUnit\Framework\TestCase
             $renderer->toJson()
         );
 
-        $this->assertJsonStringEqualsJsonString(
-            \json_encode($data),
+        $this->assertEquals(
+            http_build_query($data),
             (string)$renderer
         );
     }

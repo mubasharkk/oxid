@@ -18,6 +18,8 @@ trait ExchangeRatesTrait
     {
         $exchangeRate = $this->exchangeRates[$currency] ?? null;
         if (!$exchangeRate) {
+            // An error is thrown to stop the execution of the application
+            // when a requested currency is not available for conversion
             throw new \Error(
                 "The requested currency '{$currency}' exchange rate is currently not available."
             );

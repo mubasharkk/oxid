@@ -11,6 +11,6 @@ class XmlExchangeRates implements ExchangeRatesConfig
 
     public function __construct(string $filename)
     {
-        //@todo: Do you csv config file parsing here accordingly
+        //@todo: Write your code for xml config file parsing here
     }
 }

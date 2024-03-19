@@ -15,7 +15,7 @@ try {
 
     // load config from external API https://app.freecurrencyapi.com
     // enable this to calculate results from realtime exchange rates
-    $config = ExchangeRatesConfigFactory::getFromApi('TRY');
+    //$config = ExchangeRatesConfigFactory::getFromApi('TRY');
 
     $currencyConverter = new CurrencyConverter($config);
 

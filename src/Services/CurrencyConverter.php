@@ -21,7 +21,10 @@ class CurrencyConverter
         return $exchangeRate / $baseCurrencyExchangeRate;
     }
 
-    public function convertToBaseCurrency(string $currencyType, float $amountToConvert): float
+    public function convertToBaseCurrency(
+        string $currencyType,
+        float $amountToConvert
+    ): float
     {
         $baseConversionRate = $this->getExchangeRateFromBaseCurrency(
             $currencyType
@@ -30,7 +33,11 @@ class CurrencyConverter
         return round($amountToConvert / $baseConversionRate, 2);
     }
 
-    public function convertToCurrencies(string $currencyType, float $amount)
+    /**
+     * ALTERNATIVELY: This function could return a `CurrencyCollection` object
+     * that can be passed to the `OutputRenderer` to display/render data as required.
+     */
+    public function convertToCurrencies(string $currencyType, float $amount): array
     {
         $amountInBaseCurrency = $this->convertToBaseCurrency(
             $currencyType,
@@ -40,7 +47,10 @@ class CurrencyConverter
         $result = [];
         $currencies = $this->ratesConfig->getAvailableCurrencies();
         foreach ($currencies as $cur) {
-            $result[$cur] = round($amountInBaseCurrency * $this->ratesConfig->getExchangeRate($cur), 2);
+            $result[$cur] = round(
+                $amountInBaseCurrency * $this->ratesConfig->getExchangeRate($cur),
+                2
+            );
         }
 
         return $result;
