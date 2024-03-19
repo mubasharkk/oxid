@@ -18,7 +18,7 @@ class ApiExchangeRates implements ExchangeRatesConfig
     {
         $response = $this->getDataFromApi();
 
-        if ($response['errors']) {
+        if (isset($response['errors'])) {
             foreach ($response['errors'] as $error) {
                 throw new \Error($error[0]);
             }

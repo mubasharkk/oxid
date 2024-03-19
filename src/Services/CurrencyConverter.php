@@ -45,4 +45,9 @@ class CurrencyConverter
 
         return $result;
     }
+
+    public function getConfig(): ExchangeRatesConfig
+    {
+        return $this->ratesConfig;
+    }
 }
