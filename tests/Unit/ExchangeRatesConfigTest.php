@@ -50,30 +50,9 @@ class ExchangeRatesConfigTest extends \PHPUnit\Framework\TestCase
 
     public function testApiConfig()
     {
+        // Would have added a mock API but skipped not to keep the testing simple.
         $config = ExchangeRatesConfigFactory::getFromApi('TRY');
 
         $this->assertEquals($config->getBaseCurrency(), 'TRY');
-
-//        $configViaApi = $this->getMockBuilder(ApiExchangeRatesConfig::class)
-//            ->onlyMethods(['getDataFromApi']) // Mock only getDataFromApi()
-//            ->getMock();
-//
-//        $configViaApi
-//            ->expects($this->once())
-//            ->method('getDataFromApi')
-//            ->willReturnMap([
-//                'data' => [
-//                    'EUR' => 1, 'USD' => 1.5, 'PKR' => 300,
-//                ],
-//            ]);
-//
-//        $this->assertEquals($configViaApi->getBaseCurrency(), 'EUR');
-//        $this->assertEquals($configViaApi->getAvailableCurrencies(), [
-//            'EUR',
-//            'USD',
-//            'PKR',
-//        ]);
-//
-//        $this->assertEquals($configViaApi->getExchangeRate('PKR'), 300);
     }
 }

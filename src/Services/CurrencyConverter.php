@@ -35,7 +35,7 @@ class CurrencyConverter
 
     /**
      * ALTERNATIVELY: This function could return a `CurrencyCollection` object
-     * that can be passed to the `OutputRenderer` to display/render data as required.
+     * that can be passed to the `OutputRenderer` to display/render data as needed.
      */
     public function convertToCurrencies(string $currencyType, float $amount): array
     {

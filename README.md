@@ -34,6 +34,34 @@ interface CurrencyConverterInterface
 ```
 </details>
 
+### Solution
+
+The implemented solution converts a given **_currency_** and **_amount_** into different currencies
+equivalence values calculated via base currency. 
+
+**Default Config:** [exchange-rates-config.json](https://github.com/mubasharkk/oxid/blob/master/exchange-rates-config.json)
+
+```json
+Input: 
+------
+"USD", 100
+
+
+Output:
+-------
+// Base Currency: EUR (from given data source config)
+
+{
+    "EUR": 91.79,
+    "USD": 100,
+    "CHF": 89.04,
+    "CNY": 719.63,
+    "PKR": 27950.06,
+    "AED": 367.16,
+    "OMR": 38.55,
+    "BTC": 0
+} 
+```
 
 ## Technical Notes
 
@@ -41,10 +69,10 @@ Following are the technical & architectural notes:
 
 * The code is structure into 3 main components
   * **Configurators:** This component is responsible for reading configuration from a given data source and make it transferable/processable for the services component.
-    * Available data sources are `.json`, `.csv`, `.xml` (only json is implemented, as other data sources are assumed to be "not yet defined", though placeholder classes are added).
+    * Available data sources are `.json`, `.csv`, `.xml` (only json is implemented, as other data sources are assumed to be "not yet defined", though placeholder classes are available).
     * Additionally, an external API by https://app.freecurrencyapi.com is used as a data source (implemented already).
-    * Not implemented as TDD as I had to figure out before how to design the application first.
-    * **File:** 
+    * Not implemented as TDD as I had to figure out how to design the application configuration first.
+    * **Files:** 
       * [src/Config/ExchangeRatesConfigFactory](https://github.com/mubasharkk/oxid/blob/master/src/Config/ExchangeRatesConfigFactory.php)
       * [src/Config/From/ApiExchangeRates](https://github.com/mubasharkk/oxid/blob/master/src/Config/From/ApiExchangeRates.php)
       * [src/Config/From/JsonExchangeRates](https://github.com/mubasharkk/oxid/blob/master/src/Config/From/ApiExchangeRates.php)
@@ -74,4 +102,4 @@ php index.php
 ./vendor/bin/phpunit tests/ --colors
 ```
 
-**GitHub Workflow** is also added for phpunit, [**view here**](https://github.com/mubasharkk/oxid/blob/master/.github/workflows/ci.yml]).
+**GitHub Workflow** is also added for phpunit, [**view here**](https://github.com/mubasharkk/oxid/blob/master/.github/workflows/ci.yml).

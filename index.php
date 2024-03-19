@@ -19,7 +19,7 @@ try {
 
     $currencyConverter = new CurrencyConverter($config);
 
-    $result = $currencyConverter->convertToCurrencies('USD', 34000);
+    $result = $currencyConverter->convertToCurrencies('USD', 100);
 
     /*
      * Reason to not couple it with `CurrencyConvert` is that here we are
