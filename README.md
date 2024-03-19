@@ -83,6 +83,8 @@ Following are the technical & architectural notes:
   * **Renderer:** This component is only responsible for rendering the resultant data into various format. 
     * **File:**
         * [src/Renderer/OutputRenderer](https://github.com/mubasharkk/oxid/blob/master/src/Renderer/OutputRenderer.php)
+  * **Testing:** Basic Unit test coverage added. Nothing extensive has been implemented due to time spent on the task.
+  * **GitHub Actions:** Simple CI pipeline running GitHub Actions added.  [See details](https://github.com/mubasharkk/oxid/blob/master/.github/workflows/ci.yml).
 
 **Note:** Some additional comments are added to the code itself for further explanations. There is still room for optimization but tried not to stuck into a refactoring spiral.
 
