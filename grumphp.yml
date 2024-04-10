@@ -1,0 +1,21 @@
+grumphp:
+    tasks: {
+        phpcs: {
+             standard: PSR2,
+             whitelist_patterns: [/^src\/(.*)/]
+        },
+#         phpcsfixer2: {
+#              config: './vendor/bin/php-cs-fixer.php',
+#              using_cache: true,
+#              config_contains_finder: true,
+#              verbose: true
+#         },
+        phplint: null,
+        phpmd: {
+            whitelist_patterns: [/^src\/(.*)/, 'index.php']
+            exclude: [],
+            triggered_by: ['php'],
+        },
+#         phpspec: null,
+        phpstan: null
+    }
