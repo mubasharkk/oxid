@@ -16,6 +16,6 @@ grumphp:
             exclude: [],
             triggered_by: ['php'],
         },
-#         phpspec: null,
+        phpspec: null,
         phpstan: null
     }
