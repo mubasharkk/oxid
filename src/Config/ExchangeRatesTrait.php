@@ -2,9 +2,10 @@
 
 namespace Mubasharkk\Oxid\Config;
 
+use Error;
+
 trait ExchangeRatesTrait
 {
-
     private string $baseCurrency;
 
     private array $exchangeRates;
@@ -20,7 +21,7 @@ trait ExchangeRatesTrait
         if (!$exchangeRate) {
             // An error is thrown to stop the execution of the application
             // when a requested currency is not available for conversion
-            throw new \Error(
+            throw new Error(
                 "The requested currency '{$currency}' exchange rate is currently not available."
             );
         }
@@ -32,5 +33,4 @@ trait ExchangeRatesTrait
     {
         return array_keys($this->exchangeRates);
     }
-
 }

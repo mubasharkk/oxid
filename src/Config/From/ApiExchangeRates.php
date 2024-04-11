@@ -5,10 +5,10 @@ namespace Mubasharkk\Oxid\Config\From;
 use Mubasharkk\Oxid\Config\ExchangeRatesConfig;
 use Mubasharkk\Oxid\Config\ExchangeRatesTrait;
 use Mubasharkk\Oxid\Services\Api\ExchangeRatesApiService;
+use Error;
 
 class ApiExchangeRates implements ExchangeRatesConfig
 {
-
     use ExchangeRatesTrait;
 
     public function __construct(ExchangeRatesApiService $api)
@@ -19,10 +19,9 @@ class ApiExchangeRates implements ExchangeRatesConfig
 
         if ($response->hasErrors()) {
             foreach ($response->getErrors() as $error) {
-                throw new \Error($error[0]);
+                throw new Error($error[0]);
             }
         }
         $this->exchangeRates = $response->getData();
     }
-
 }

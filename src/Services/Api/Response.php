@@ -4,7 +4,6 @@ namespace Mubasharkk\Oxid\Services\Api;
 
 class Response
 {
-
     public function __construct(private array $data, private array $errors = [])
     {
     }

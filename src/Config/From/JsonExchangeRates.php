@@ -7,7 +7,6 @@ use Mubasharkk\Oxid\Config\ExchangeRatesTrait;
 
 class JsonExchangeRates implements ExchangeRatesConfig
 {
-
     use ExchangeRatesTrait;
 
     public function __construct(string $filename)

@@ -4,7 +4,6 @@ namespace Mubasharkk\Oxid\Helpers;
 
 final class ColorizeCLI
 {
-
     public const ESC = "\033";
 
     public const ANSI_CLOSE = self::ESC."[0m";
@@ -37,5 +36,4 @@ final class ColorizeCLI
     {
         return self::ANSI_UNDERLINE.self::ANSI_BOLD.$text.self::ANSI_CLOSE.PHP_EOL;
     }
-
 }

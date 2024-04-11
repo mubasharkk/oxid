@@ -4,10 +4,10 @@ namespace Mubasharkk\Oxid\Config;
 
 use Mubasharkk\Oxid\Config\From;
 use Mubasharkk\Oxid\Services\Api;
+use Error;
 
 class ExchangeRatesConfigFactory
 {
-
     public static function get(string $source): ?ExchangeRatesConfig
     {
         $extension = pathinfo($source, PATHINFO_EXTENSION);
@@ -30,9 +30,9 @@ class ExchangeRatesConfigFactory
 
         return match ($extension) {
             'json' => new From\JsonExchangeRates($source),
-            'csv' => new From\CsvExchangeRates($source),
-            'xml' => new From\XmlExchangeRates($source),
-            default => throw new \Error("Unable to find configuration file: {$source}"),
+            'csv' => new From\CsvExchangeRates(/*$source*/),
+            'xml' => new From\XmlExchangeRates(/*$source*/),
+            default => throw new Error("Unable to find configuration file: {$source}"),
         };
     }
 

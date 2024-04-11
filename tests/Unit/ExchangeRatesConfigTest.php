@@ -4,7 +4,10 @@ use Mubasharkk\Oxid\Config\ExchangeRatesConfigFactory;
 use Mubasharkk\Oxid\Config\From;
 use Mubasharkk\Oxid\Services\Api\FreeCurrencyApiService;
 use Mubasharkk\Oxid\Services\Api\Response;
+use PHPUnit\Framework\Attributes\CoversClass;
 
+#[CoversClass(From\JsonExchangeRates::class)]
+#[CoversClass(ExchangeRatesConfigFactory::class)]
 class ExchangeRatesConfigTest extends \PHPUnit\Framework\TestCase
 {
 

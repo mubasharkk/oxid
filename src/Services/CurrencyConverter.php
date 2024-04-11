@@ -6,7 +6,6 @@ use Mubasharkk\Oxid\Config\ExchangeRatesConfig;
 
 class CurrencyConverter
 {
-
     public function __construct(private ExchangeRatesConfig $ratesConfig)
     {
     }
@@ -14,18 +13,17 @@ class CurrencyConverter
     private function getExchangeRateFromBaseCurrency(string $currency): float
     {
         $exchangeRate = $this->ratesConfig->getExchangeRate($currency);
-        $baseCurrencyExchangeRate = $this->ratesConfig->getExchangeRate(
+        $baseExchangeRate = $this->ratesConfig->getExchangeRate(
             $this->ratesConfig->getBaseCurrency()
         );
 
-        return $exchangeRate / $baseCurrencyExchangeRate;
+        return $exchangeRate / $baseExchangeRate;
     }
 
     public function convertToBaseCurrency(
         string $currencyType,
         float $amountToConvert
-    ): float
-    {
+    ): float {
         $baseConversionRate = $this->getExchangeRateFromBaseCurrency(
             $currencyType
         );

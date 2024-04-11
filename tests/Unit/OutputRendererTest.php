@@ -1,7 +1,9 @@
 <?php
 
-use Mubasharkk\Oxid\Renderer\OutputRenderer;
+use Mubasharkk\Oxid\Renderers\JsonRenderer;
+use PHPUnit\Framework\Attributes\CoversClass;
 
+#[CoversClass(JsonRenderer::class)]
 class OutputRendererTest extends \PHPUnit\Framework\TestCase
 {
 
@@ -18,16 +20,11 @@ class OutputRendererTest extends \PHPUnit\Framework\TestCase
             "BTC" => 0.5,
         ];
 
-        $renderer = new OutputRenderer($data);
+        $renderer = new JsonRenderer($data);
 
         $this->assertJsonStringEqualsJsonString(
             \json_encode($data),
-            $renderer->toJson()
-        );
-
-        $this->assertEquals(
-            http_build_query($data),
-            (string)$renderer
+            $renderer->generate()
         );
     }
 }

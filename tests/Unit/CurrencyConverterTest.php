@@ -2,7 +2,12 @@
 
 use Mubasharkk\Oxid\Config\From;
 use Mubasharkk\Oxid\Services\CurrencyConverter;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\UsesClass;
 
+
+#[CoversClass(CurrencyConverter::class)]
+#[UsesClass(From\JsonExchangeRates::class)]
 class CurrencyConverterTest extends \PHPUnit\Framework\TestCase
 {
 

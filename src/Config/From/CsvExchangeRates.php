@@ -9,7 +9,7 @@ class CsvExchangeRates implements ExchangeRatesConfig
 {
     use ExchangeRatesTrait;
 
-    public function __construct(string $filename)
+    public function __construct(/*string $filename*/)
     {
         //@todo: Write your code for csv config file parsing here
     }

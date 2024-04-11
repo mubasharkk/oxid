@@ -4,7 +4,6 @@ namespace Mubasharkk\Oxid\Renderers;
 
 class JsonRenderer implements OutputRenderer
 {
-
     public function __construct(private array $results)
     {
     }

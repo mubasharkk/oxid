@@ -4,7 +4,6 @@ namespace Mubasharkk\Oxid\Services\Api;
 
 class FreeCurrencyApiService implements ExchangeRatesApiService
 {
-
     private const API_URI = 'https://api.freecurrencyapi.com/v1/latest';
 
     private const API_KEY = 'fca_live_ZmNzHcPZjTPadMBc2SBpA1u8zbbytIAiK0mczbI9';
@@ -17,7 +16,7 @@ class FreeCurrencyApiService implements ExchangeRatesApiService
 
     public function getResponse(): Response
     {
-        $ch = curl_init();
+        $requestObject = curl_init();
 
         $uri = self::API_URI.'?'.http_build_query([
                 'apikey'        => self::API_KEY,
@@ -29,11 +28,11 @@ class FreeCurrencyApiService implements ExchangeRatesApiService
                 'base_currency' => $this->baseCurrency,
             ]);
 
-        curl_setopt($ch, CURLOPT_URL, $uri);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($requestObject, CURLOPT_URL, $uri);
+        curl_setopt($requestObject, CURLOPT_RETURNTRANSFER, true);
 
-        $response = json_decode(curl_exec($ch), true);
-        curl_close($ch);
+        $response = json_decode(curl_exec($requestObject), true);
+        curl_close($requestObject);
 
         return new Response(
             $response['data'] ?? [],

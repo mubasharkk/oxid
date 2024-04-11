@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cc087cc0cce4897f664afb7fcfafa826",
+    "content-hash": "127392350dc73813479943a98c50960d",
     "packages": [
         {
             "name": "amphp/amp",
@@ -5851,63 +5851,6 @@
             "time": "2024-04-08T15:03:00+00:00"
         },
         {
-            "name": "mockery/mockery",
-            "version": "0.7.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mockery/mockery.git",
-                "reference": "10ef0f8a63392f244e5b19de261b6a08eb8e4109"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mockery/mockery/zipball/10ef0f8a63392f244e5b19de261b6a08eb8e4109",
-                "reference": "10ef0f8a63392f244e5b19de261b6a08eb8e4109",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.2"
-            },
-            "suggest": {
-                "Hamcrest": "1.0.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Mockery": "library/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "New BSD"
-            ],
-            "authors": [
-                {
-                    "name": "Pádraic Brady",
-                    "email": "padraic.brady@gmail.com",
-                    "homepage": "http://blog.astrumfutura.com"
-                }
-            ],
-            "description": "Mockery is a simple yet flexible PHP mock object framework for use in unit testing with PHPUnit, PHPSpec or any other testing framework. Its core goal is to offer a test double framework with a succint API capable of clearly defining all possible object operations and interactions using a human readable Domain Specific Language (DSL). Designed as a drop in alternative to PHPUnit's phpunit-mock-objects library, Mockery is easy to integrate with PHPUnit and can operate alongside phpunit-mock-objects without the World ending.",
-            "homepage": "http://github.com/padraic/mockery",
-            "keywords": [
-                "BDD",
-                "TDD",
-                "library",
-                "mock",
-                "mock objects",
-                "mockery",
-                "stub",
-                "test",
-                "test double",
-                "testing"
-            ],
-            "support": {
-                "issues": "https://github.com/mockery/mockery/issues",
-                "source": "https://github.com/mockery/mockery/tree/0.7.2"
-            },
-            "time": "2012-01-24T20:22:39+00:00"
-        },
-        {
             "name": "pdepend/pdepend",
             "version": "2.16.2",
             "source": {
@@ -6283,57 +6226,6 @@
             "time": "2023-12-11T08:22:20+00:00"
         },
         {
-            "name": "phpspec/phpspec",
-            "version": "1.4.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/phpspec/phpspec.git",
-                "reference": "cb54c94f89a5e1f4098363e19ccfe624b3e5346f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/phpspec/zipball/cb54c94f89a5e1f4098363e19ccfe624b3e5346f",
-                "reference": "cb54c94f89a5e1f4098363e19ccfe624b3e5346f",
-                "shasum": ""
-            },
-            "require": {
-                "mockery/mockery": "0.7.*",
-                "php": ">=5.3.2",
-                "sebastianbergmann/php-text-template": "1.1.1"
-            },
-            "bin": [
-                "scripts/phpspec.php"
-            ],
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "PHPSpec": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL"
-            ],
-            "authors": [
-                {
-                    "name": "PHPSpec Team",
-                    "homepage": "https://github.com/phpspec/phpspec/contributors"
-                }
-            ],
-            "description": "PHPSpec: The BDD Specification Library",
-            "homepage": "http://phpspec.net",
-            "keywords": [
-                "BDD",
-                "spec",
-                "test"
-            ],
-            "support": {
-                "issues": "https://github.com/phpspec/phpspec/issues",
-                "source": "https://github.com/phpspec/phpspec/tree/master"
-            },
-            "time": "2012-10-03T14:07:08+00:00"
-        },
-        {
             "name": "phpspec/prophecy",
             "version": "v1.19.0",
             "source": {
@@ -6510,49 +6402,6 @@
                 }
             ],
             "time": "2024-03-28T16:17:31+00:00"
-        },
-        {
-            "name": "sebastianbergmann/php-text-template",
-            "version": "1.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/MarcelloDuarte/php-text-template.git",
-                "reference": "c5273979d2df13acfc345cca71c1394b25bfd9f2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/MarcelloDuarte/php-text-template/zipball/c5273979d2df13acfc345cca71c1394b25bfd9f2",
-                "reference": "c5273979d2df13acfc345cca71c1394b25bfd9f2",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2.7"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Text": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "The BSD 3-Clause License"
-            ],
-            "authors": [
-                {
-                    "name": "Sebastian Bergmann",
-                    "homepage": "http://sebastian-bergmann.de/"
-                }
-            ],
-            "description": "Text_Template: Simple template engine",
-            "homepage": "https://github.com/sebastianbergmann/php-text-template",
-            "keywords": [
-                "template"
-            ],
-            "support": {
-                "source": "https://github.com/MarcelloDuarte/php-text-template/tree/1.1.1"
-            },
-            "time": "2012-08-01T15:45:04+00:00"
         },
         {
             "name": "symfony/polyfill-php80",
